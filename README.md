@@ -5,7 +5,7 @@
   
 ```bash
 $ git clone https://github.com/hasansharif819/employee-management-client.git
-$ cd your-project
+$ cd employee-management-client
   ```
 
 ## 2. Install Dependencies
