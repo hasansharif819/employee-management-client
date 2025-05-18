@@ -1,7 +1,7 @@
 # Frontend – React + Vite + TypeScript
 
 ## Getting Started
-* 1. Clone the Repository
+## 1. Clone the Repository
   
 ```bash
 $ git clone https://github.com/hasansharif819/employee-management-client.git
@@ -22,13 +22,13 @@ $ npm run dev
 * Open in your browser.
 * http://localhost:5173
 
-## Unit Testing with Vitest
+## 4. Unit Testing with Vitest
 
 * Installation
 ```bash
 $ npm install -D vitest @testing-library/react @testing-library/jest-dom jsdom
 ```
-## Configure Vitest
+## 5. Configure Vitest
 * Update your vite.config.ts:
 
 ```bash
@@ -61,7 +61,7 @@ describe('Button', () => {
 });
 ```
 
-## Running Tests
+## 6. Running Tests
 
 ```bash
 $ npm run test
@@ -82,7 +82,7 @@ $ npm run test:watch
   "test:watch": "vitest --watch"
 }
 
-## Linting & Formatting
+## 7. Linting & Formatting
 
 ESLint – For code quality
 
@@ -92,9 +92,9 @@ Prettier – For consistent formatting
 $ npm install -D eslint prettier eslint-plugin-react eslint-config-prettier
 ```
 
-## Building for Production
+## 8. Building for Production
 
 ```bash
 $ npm run build
 ```
-## Finally Deploy on the server (AWS)
+## 9. Finally Deploy on the server (AWS)
