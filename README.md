@@ -1,54 +1,116 @@
-# React + TypeScript + Vite
+# Frontend – React + Vite + TypeScript
+## This project is a high-performance frontend application built with React, powered by Vite and written in TypeScript. It includes a robust unit testing setup using Vitest, ensuring confidence and reliability in the codebase.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ # Project Structure
+├── public/                  # Static assets
+├── src/
+│   ├── components/          # Reusable components
+│   ├── pages/               # Route-based views
+│   ├── hooks/               # Custom hooks
+│   ├── services/            # API and business logic
+│   ├── types/               # TypeScript types/interfaces
+│   ├── App.tsx              # Root component
+│   ├── main.tsx             # App entry point
+│   └── index.css            # Global styles
+├── vite.config.ts           # Vite config
+├── tsconfig.json            # TypeScript config
+├── README.md
 
-Currently, two official plugins are available:
+## Getting Started
+* 1. Clone the Repository
+  
+```bash
+$ git clone https://github.com/hasansharif819/employee-management-client.git
+$ cd your-project
+  ```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 2. Install Dependencies
+```bash
+$ npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 3. Start the Development Server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+$ npm run dev
 ```
+
+* Open in your browser.
+* http://localhost:5173
+
+## Unit Testing with Vitest
+
+* Installation
+```bash
+$ npm install -D vitest @testing-library/react @testing-library/jest-dom jsdom
+```
+## Configure Vitest
+* Update your vite.config.ts:
+
+```bash
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/test/setup.ts',
+  },
+});
+```
+
+* Create src/test/setup.ts
+* 
+```bash
+import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
+import { describe, it, expect } from 'vitest';
+import Button from './Button';
+
+describe('Button', () => {
+  it('renders correctly', () => {
+    render(<Button label="Click me" />);
+    expect(screen.getByText('Click me')).toBeInTheDocument();
+  });
+});
+```
+
+## Running Tests
+
+```bash
+$ npm run test
+```
+
+* To watch tests:
+
+```bash
+$ npm run test:watch
+```
+* Add these to your package.json scripts:
+
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
+  "test": "vitest",
+  "test:watch": "vitest --watch"
+}
+
+## Linting & Formatting
+
+ESLint – For code quality
+
+Prettier – For consistent formatting
+
+```bash
+$ npm install -D eslint prettier eslint-plugin-react eslint-config-prettier
+```
+
+## Building for Production
+
+```bash
+$ npm run build
+```
+## Finally Deploy on the server (AWS)
