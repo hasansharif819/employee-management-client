@@ -1,5 +1,4 @@
 # Frontend – React + Vite + TypeScript
-## This project is a high-performance frontend application built with React, powered by Vite and written in TypeScript. It includes a robust unit testing setup using Vitest, ensuring confidence and reliability in the codebase.
 
 ## Getting Started
 * 1. Clone the Repository
