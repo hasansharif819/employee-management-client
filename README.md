@@ -1,21 +1,6 @@
 # Frontend – React + Vite + TypeScript
 ## This project is a high-performance frontend application built with React, powered by Vite and written in TypeScript. It includes a robust unit testing setup using Vitest, ensuring confidence and reliability in the codebase.
 
- # Project Structure
-├── public/                  # Static assets
-├── src/
-│   ├── components/          # Reusable components
-│   ├── pages/               # Route-based views
-│   ├── hooks/               # Custom hooks
-│   ├── services/            # API and business logic
-│   ├── types/               # TypeScript types/interfaces
-│   ├── App.tsx              # Root component
-│   ├── main.tsx             # App entry point
-│   └── index.css            # Global styles
-├── vite.config.ts           # Vite config
-├── tsconfig.json            # TypeScript config
-├── README.md
-
 ## Getting Started
 * 1. Clone the Repository
   
@@ -62,7 +47,7 @@ export default defineConfig({
 ```
 
 * Create src/test/setup.ts
-* 
+  
 ```bash
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
