@@ -74,13 +74,13 @@ $ npm run test:watch
 ```
 * Add these to your package.json scripts:
 
-"scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview",
-  "test": "vitest",
-  "test:watch": "vitest --watch"
-}
+* "scripts": {
+  * "dev": "vite",
+  * "build": "vite build",
+  * "preview": "vite preview",
+  * "test": "vitest",
+  * "test:watch": "vitest --watch"
+* }
 
 ## 7. Linting & Formatting
 
